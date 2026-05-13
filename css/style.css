@@ -498,6 +498,46 @@ p { margin-bottom: 1.2em; }
   transform: translate(40px, 60px) scale(1.05);
 }
 
+/* Book cover area — floating text as layered decoration */
+.book-visual {
+  position: relative;
+  z-index: 1;
+}
+
+.book-float-primary {
+  top: 50%;
+  left: 50%;
+  transform: translate(-140%, -60%);
+  z-index: 0;
+  font-size: clamp(5rem, 12vw, 10rem);
+  -webkit-text-stroke: 1.2px rgba(200,180,150,0.08);
+  pointer-events: none;
+}
+
+.book-float-secondary {
+  top: 50%;
+  left: 50%;
+  transform: translate(30%, 50%);
+  z-index: 0;
+  font-size: clamp(3.5rem, 8vw, 7rem);
+  -webkit-text-stroke: 1px rgba(200,180,150,0.06);
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+.book-visual:hover .book-float-primary {
+  -webkit-text-stroke: 1.2px rgba(184,74,74,0.25);
+}
+
+.book-visual:hover .book-float-secondary {
+  -webkit-text-stroke: 1px rgba(184,74,74,0.18);
+}
+
+.book-cover-frame {
+  position: relative;
+  z-index: 1;
+}
+
 .author-portrait {
   position: relative;
   transition: transform var(--transition-fast), box-shadow var(--transition-fast);
