@@ -507,9 +507,9 @@ p { margin-bottom: 1.2em; }
 .book-float-primary {
   top: 50%;
   left: 50%;
-  transform: translate(-140%, -60%);
+  transform: translate(-80%, -70%);
   z-index: 0;
-  font-size: clamp(5rem, 12vw, 10rem);
+  font-size: clamp(4.5rem, 10vw, 8rem);
   -webkit-text-stroke: 1.2px rgba(200,180,150,0.08);
   pointer-events: none;
 }
@@ -519,7 +519,7 @@ p { margin-bottom: 1.2em; }
   left: 50%;
   transform: translate(30%, 50%);
   z-index: 0;
-  font-size: clamp(3.5rem, 8vw, 7rem);
+  font-size: clamp(3rem, 7vw, 5.5rem);
   -webkit-text-stroke: 1px rgba(200,180,150,0.06);
   opacity: 0.4;
   pointer-events: none;
