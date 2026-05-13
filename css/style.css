@@ -566,6 +566,77 @@ p { margin-bottom: 1.2em; }
   letter-spacing: 0.3em;
 }
 
+/* Book cover image */
+.book-cover-frame {
+  position: relative;
+  padding: 16px;
+  border: 1px solid var(--border);
+  background: rgba(184,168,152,0.015);
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow var(--transition-fast), transform var(--transition-fast), border-color var(--transition-fast);
+}
+
+.book-cover-frame:hover {
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-4px) scale(1.01);
+  border-color: rgba(184,168,152,0.12);
+}
+
+.book-cover-frame::before {
+  content: '';
+  position: absolute;
+  top: -12px; left: -12px;
+  width: 40px; height: 40px;
+  border-top: 1.5px solid var(--accent);
+  border-left: 1.5px solid var(--accent);
+  transition: all var(--transition-fast);
+}
+
+.book-cover-frame:hover::before {
+  top: -16px; left: -16px;
+  width: 50px; height: 50px;
+}
+
+.book-cover-frame::after {
+  content: '';
+  position: absolute;
+  bottom: -12px; right: -12px;
+  width: 40px; height: 40px;
+  border-bottom: 1.5px solid var(--accent);
+  border-right: 1.5px solid var(--accent);
+  transition: all var(--transition-fast);
+}
+
+.book-cover-frame:hover::after {
+  bottom: -16px; right: -16px;
+  width: 50px; height: 50px;
+}
+
+.book-cover-img {
+  display: block;
+  width: 260px;
+  height: auto;
+  filter: sepia(15%) contrast(1.05);
+  transition: filter var(--transition-fast);
+}
+
+.book-cover-frame:hover .book-cover-img {
+  filter: sepia(0%) contrast(1.1);
+}
+
+/* Author portrait image */
+.portrait-img {
+  display: block;
+  width: 240px;
+  height: auto;
+  filter: sepia(20%) contrast(1.05);
+  transition: filter var(--transition-fast);
+}
+
+.portrait-frame:hover .portrait-img {
+  filter: sepia(0%) contrast(1.1);
+}
+
 /* ===================== STORIES ===================== */
 .stories {
   background: var(--bg-elevated);
@@ -1123,7 +1194,24 @@ p { margin-bottom: 1.2em; }
   font-family: 'Noto Sans SC', sans-serif;
   font-size: 0.8rem;
   color: var(--text-dim);
-  margin: 0;
+  margin: 0 0 12px;
+}
+
+.footer-links {
+  display: flex;
+  gap: 20px;
+}
+
+.footer-links a {
+  font-family: 'Noto Sans SC', sans-serif;
+  font-size: 0.75rem;
+  color: var(--text-dim);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.footer-links a:hover {
+  color: var(--accent);
 }
 
 .footer-credit {
